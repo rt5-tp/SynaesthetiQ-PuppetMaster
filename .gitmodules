@@ -1,0 +1,6 @@
+[submodule "src/SynaesthetiQ-LED-Library"]
+	path = src/SynaesthetiQ-LED-Library
+	url = git@github.com:rt5-tp/SynaesthetiQ-LED-LIbrary.git
+[submodule "src/SynaesthetiQ-audiocapture"]
+	path = src/SynaesthetiQ-audiocapture
+	url = git@github.com:rt5-tp/SynaesthetiQ-audiocapture.git
