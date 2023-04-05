@@ -1,5 +1,5 @@
 #include <iostream>
-#include "SynaesthetiQ-LED-Library/synaesthetiq.hpp"
+#include "SynaesthetiQ-LED-Library/src/SynaesthetiQ/synaesthetiq.hpp"
 #include "SynaesthetiQ-audiocapture/src/AudioCapture/AudioCapture.h"
 #include "SynaesthetiQ-audiocapture/src/GenreClassification/GenreClassifier.h"
 
@@ -16,7 +16,7 @@ class Visualiser {
     }
 
     public:
-    Visualiser() : audioCapture("", false), synaesthetiQ(), genreClassifier(){
+    Visualiser() : audioCapture(""), synaesthetiQ(), genreClassifier(){
         genreClassifier.register_genre_callback(&genre_prediction_callback);
         audioCapture.register_callback(genreClassifier.audio_callback);
     }
@@ -56,6 +56,7 @@ class Visualiser {
         synaesthetiQ.render();
     }
 };
+std::vector<std::pair<std::string, float>> Visualiser::predictions;
 
 int main(){
     Visualiser visualiser;
