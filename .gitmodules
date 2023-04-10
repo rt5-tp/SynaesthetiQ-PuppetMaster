@@ -4,3 +4,6 @@
 [submodule "src/SynaesthetiQ-audiocapture"]
 	path = src/SynaesthetiQ-audiocapture
 	url = git@github.com:rt5-tp/SynaesthetiQ-audiocapture.git
+[submodule "documentation"]
+	path = documentation
+	url = git@github.com:rt5-tp/rt5-tp.github.io.git
