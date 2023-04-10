@@ -6,7 +6,7 @@ set(AC SynaesthetiQ-audiocapture/src)
 set(LED SynaesthetiQ-LED-Library/src/SynaesthetiQ)
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fsanitize=address -fno-omit-frame-pointer")
-set(SOURCES main.cpp ${LED}/synaesthetiq.cpp ${AC}/AudioCapture/PingPongBuffer.cpp ${AC}/AudioCapture/AudioCapture.cpp ${AC}/GenreClassification/GenreClassifier.cpp ${AC}/FFTProcessor.cpp)
+set(SOURCES main.cpp Visualiser/Visualiser.cpp ${LED}/synaesthetiq.cpp ${AC}/AudioCapture/PingPongBuffer.cpp ${AC}/AudioCapture/AudioCapture.cpp ${AC}/GenreClassification/GenreClassifier.cpp ${AC}/FFTProcessor.cpp)
 find_package( CURL REQUIRED )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -16,6 +16,6 @@ include_directories(/usr/local/lib ${LED} ${AC}/AudioCapture ${AC}/GenreClassifi
 target_link_libraries(${PROJECT_NAME} /usr/local/lib/libws2811.so asound stdc++ pthread fftw3 CURL::libcurl)
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_NAME}.exe")
 
-set(HEADERS ${LED}/synaesthetiq.hpp ${LED}/Colour.hpp)
+set(HEADERS Visualiser/Visualiser.hpp ${LED}/synaesthetiq.hpp ${LED}/Colour.hpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
