@@ -16,9 +16,9 @@ You can use SynaesthetiQ for:
 # Installation
 
 ## Install dependencies for Raspberry Pi
-sudo apt-get install libasound2-dev libcurl4-openssl-dev cmake libsdl2-dev libfftw3-dev
 
-build https://github.com/jgarff/rpi_ws281x 
+Run the "setup.sh" script contained within the root of this repository
+> sudo sh setup.sh
 
 # Info
 
