@@ -7,3 +7,6 @@
 [submodule "documentation"]
 	path = documentation
 	url = git@github.com:rt5-tp/rt5-tp.github.io.git
+[submodule "src/EnvelopeFollowing"]
+	path = src/EnvelopeFollowing
+	url = git@github.com:rt5-tp/envelope_following.git

@@ -9,12 +9,12 @@ std::vector<std::pair<std::string, float>> Visualiser::predictions;
  * audio =||=> envelopeFollower =||=> Visualiser
  *        ||=> fftProcessor     =||
 */
-Visualiser::Visualiser() : audioCapture(""), synaesthetiQ(), genreClassifier(), fftProcessor(){
+Visualiser::Visualiser() : audioCapture(""), synaesthetiQ(), genreClassifier(), fftProcessor(), envelopeFollower(44100,10){
     
     // data flowing into visualiser, which can be accessed in visualise()
     genreClassifier.register_genre_callback(&Visualiser::genre_prediction_callback);
     fftProcessor.registerCallback(&Visualiser::fft_callback);
-
+    envelopeFollower.registerCallback(&Visualiser::envelope_callback);
     
     // data flowing from audio into genreClassifer, fftProcessor
     //        ||=> genreClassifier
@@ -22,6 +22,7 @@ Visualiser::Visualiser() : audioCapture(""), synaesthetiQ(), genreClassifier(), 
     //        ||=> fftProcessor     
     audioCapture.register_callback(genreClassifier.audio_callback);
     audioCapture.register_callback(fftProcessor.audio_callback);
+    audioCapture.register_callback(envelopeFollower.audio_callback);
 }
 
 void Visualiser::visualise(){
