@@ -85,15 +85,6 @@ void Visualiser::visualise(){
     synaesthetiQ.render();
 }
 
-void Visualiser::fft_callback(const std::vector<double> & fft_data){
-    Visualiser::fft_data = fft_data;
-    int rows = 16;
-    int columns = 32;
-    std::vector<std::vector<bool>> ledMatrix = convertFFTToLEDMatrix(fft_data, rows, columns, 60, 10000); // 2D boolean vector to represent LED matrix
-
-}
-
-
 /**
  * This function takes in FFT data, number of rows, number of columns, and a max frequency, and outputs a 2D matrix of bools.
  * @param fftData a vector of double values representing the FFT data
@@ -159,4 +150,12 @@ std::vector<std::vector<bool>> convertFFTToLEDMatrix(const std::vector<double> &
     }
 
     return ledMatrix; // Return the final LED matrix display
+}
+
+void Visualiser::fft_callback(const std::vector<double> & fft_data){
+    Visualiser::fft_data = fft_data;
+    int rows = 16;
+    int columns = 32;
+    std::vector<std::vector<bool>> ledMatrix = convertFFTToLEDMatrix(fft_data, rows, columns, 60, 10000); // 2D boolean vector to represent LED matrix
+
 }
