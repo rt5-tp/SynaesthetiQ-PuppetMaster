@@ -23,6 +23,8 @@ cd ~
 git clone https://github.com/berndporr/iir1.git
 cd iir1
 cmake . -DIIR1_BUILD_DEMO=OFF -DIIR1_BUILD_TESTING=OFF
+make
+sudo make install
 
 echo "Please uncomment the following line in file /boot/config.txt"
 echo "#dtparam=audio=on"
