@@ -1,5 +1,7 @@
 sudo apt-get install libasound2-dev libcurl4-openssl-dev cmake libsdl2-dev libfftw3-dev git
 
+git submodule update --init --recursive --remote
+
 # setup Pi-Codec hat
 cd ~
 git clone https://github.com/iqaudio/Pi-Codec.git
