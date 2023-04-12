@@ -1,4 +1,4 @@
-sudo apt-get install libasound2-dev libcurl4-openssl-dev cmake libsdl2-dev libfftw3-dev git
+sudo apt-get install libasound2-dev libcurl4-openssl-dev cmake libfftw3-dev git
 
 git submodule update --init --recursive --remote
 
