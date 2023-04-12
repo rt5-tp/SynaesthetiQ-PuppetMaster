@@ -1,6 +1,8 @@
 #include "Visualiser.hpp"
 
 std::vector<std::pair<std::string, float>> Visualiser::predictions;
+std::vector<double> Visualiser::fft_data;
+std::vector<short> Visualiser::envelope_data;
 
 /* 
  * @brief Sets up callbacks
@@ -26,7 +28,7 @@ Visualiser::Visualiser() : audioCapture(""), synaesthetiQ(), genreClassifier(), 
 }
 
 void Visualiser::visualise(){
-    Colour colour(100, 100, 100);
+    Colour colour(10, 10, 10);
     
     // if predictions have been made
     if(predictions.size()>0){
@@ -55,6 +57,20 @@ void Visualiser::visualise(){
             colour.setGreen(155);
         }
     }
+
+    short max_val = 0;
+    for(auto val : envelope_data){
+        if(val>max_val) max_val = val;
+    }
+
+    int led_val = 255.0*((double)max_val / 4000.0);
+
+    std::cout << "Max_val: " << max_val << std::endl;
+    std::cout << "Led_val: " << led_val << std::endl;
+
+    colour.setRed(led_val%200);
+    colour.setGreen(led_val%200);
+
 
     synaesthetiQ.setMatrixColour(colour);
     synaesthetiQ.render();
