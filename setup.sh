@@ -8,7 +8,7 @@ git clone https://github.com/iqaudio/Pi-Codec.git
 echo "sudo alsactl restore -f ~/Pi-Codec/IQaudIO_Codec_OnboardMIC_record_and_SPK_playback.state" >> ~/.bashrc
 
 # fix clockspeed to allow comms
-sudo echo "core_freq=500\ncore_freq_min=500" >> /boot/config.txt
+sudo printf "core_freq=500\ncore_freq_min=500" >> /boot/config.txt
 
 # increase SPI buffer
 sudo echo " spidev.bufsiz=32768" >> /boot/cmdline.txt
@@ -30,4 +30,6 @@ sudo make install
 
 echo "Please uncomment the following line in file /boot/config.txt"
 echo "#dtparam=audio=on"
+echo "Then, run the following command and enable SPI:"
+echo "sudo raspi-config"
 echo "Then reboot the Pi"
