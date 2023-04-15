@@ -72,6 +72,8 @@ void Visualiser::visualise(){
     colour.setGreen(led_val%200);
 
 
+
     synaesthetiQ.setMatrixColour(colour);
     synaesthetiQ.render();
 }
+

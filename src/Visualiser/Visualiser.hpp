@@ -22,6 +22,8 @@ class Visualiser {
     }
 
     static void fft_callback(const std::vector<double> & fft_data){
+        std::cout << "fft callback detected!" << std::endl;
+        std::cout << "size of data = " << fft_data.size() << std::endl;
         Visualiser::fft_data = fft_data;
     }
 
