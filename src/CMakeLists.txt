@@ -6,7 +6,7 @@ set(AC SynaesthetiQ-audiocapture/src)
 set(LED SynaesthetiQ-LED-Library/src/SynaesthetiQ)
 set(EF EnvelopeFollowing/src)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fsanitize=address -fno-omit-frame-pointer -Wall -g") #added this for debugging
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fsanitize=address -fno-omit-frame-pointer -g") #added this for debugging
 set(SOURCES main.cpp Visualiser/Visualiser.cpp ${LED}/synaesthetiq.cpp ${AC}/AudioCapture/PingPongBuffer.cpp ${AC}/AudioCapture/AudioCapture.cpp ${AC}/GenreClassification/GenreClassifier.cpp ${AC}/FFTProcessor.cpp ${EF}/EnvelopeFollower.cpp)
 find_package( CURL REQUIRED )
 find_package(iir REQUIRED)

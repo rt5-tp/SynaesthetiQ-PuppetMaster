@@ -34,10 +34,10 @@ Visualiser::Visualiser() : audioCapture(""), synaesthetiQ(), genreClassifier(), 
 void Visualiser::visualise()
 {
     Colour on_colour(10, 10, 10);
-    Colour off_colour(0,0,0);
+    Colour off_colour(0, 0, 0);
 
     // Predictions:
-     // if predictions have been made
+    // if predictions have been made
     // if(predictions.size()>0){
 
     //     // Find genre with maximum certainty
@@ -65,25 +65,32 @@ void Visualiser::visualise()
     //     }
     // }
 
-
     // Read values from FFT LED Matrix callback
-    for (int y = 0; y < fftLED_data.size(); y++)
+
+    if (fftLED_data.size() > 0)
     {
-        for (int x = 0; x < fftLED_data[y].size(); x++)
+        std::cout << "y size = " << fftLED_data.size() << std::endl;
+        std::cout << "x size = " << fftLED_data[0].size() << std::endl;
+        for (int y = 0; y < fftLED_data.size(); y++)
         {
-            // bool status = fftLED_data[i][j];
-            if (fftLED_data[y][x] == true) {
+            for (int x = 0; x < fftLED_data[y].size(); x++)
+            {
+                // bool status = fftLED_data[i][j];
+                if (fftLED_data[y][x] == true)
+                {
+                    // std::cout << "Element (" << i << ", " << j << ") = " << status << std::endl;
+                    synaesthetiQ.setMatrixPixelColour(x, y, on_colour);
+                }
+                else
+                {
+                    synaesthetiQ.setMatrixPixelColour(x, y, off_colour);
+                }
+                // bool status = fftLED_data[i][j];
                 // std::cout << "Element (" << i << ", " << j << ") = " << status << std::endl;
-                synaesthetiQ.setMatrixPixelColour(x, y, on_colour);
             }
-            else {
-                synaesthetiQ.setMatrixPixelColour(x, y, off_colour);
-            }
-            // bool status = fftLED_data[i][j];
-            // std::cout << "Element (" << i << ", " << j << ") = " << status << std::endl;
         }
     }
-     synaesthetiQ.render();
+    synaesthetiQ.render();
 }
 
 // void Visualiser::visualise(){
