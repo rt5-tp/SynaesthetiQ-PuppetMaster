@@ -21,7 +21,7 @@ class Visualiser {
         Visualiser::predictions = predictions;
     }
 
-    static void fft_callback(const std::vector<double> & fft_data){
+    static void fft_callback(const std::vector<std::vector<bool>> & fft_data){
         Visualiser::fft_data = fft_data;
     }
 

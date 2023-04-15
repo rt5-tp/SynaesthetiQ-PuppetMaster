@@ -28,7 +28,8 @@ Visualiser::Visualiser() : audioCapture(""), synaesthetiQ(), genreClassifier(), 
 }
 
 void Visualiser::visualise(){
-    Colour colour(10, 10, 10);
+    Colour on_colour(10, 10, 10);
+    Colour off_colour(0,0,0);
     
     // if predictions have been made
     if(predictions.size()>0){
@@ -44,34 +45,44 @@ void Visualiser::visualise(){
         }
 
         if(genre=="rock") {
-            colour.setBlue(155);
-            colour.setRed(50);
+            on_colour.setBlue(155);
+            on_colour.setRed(50);
         }
         else if(genre=="pop") {
-            colour.setRed(150);
+            on_colour.setRed(150);
         }
         else if(genre=="blues") {
-            colour.setBlue(155);
+            on_colour.setBlue(155);
         }
         else if(genre=="reggae"){
-            colour.setGreen(155);
+            on_colour.setGreen(155);
         }
     }
 
-    short max_val = 0;
-    for(auto val : envelope_data){
-        if(val>max_val) max_val = val;
+    // short max_val = 0;
+    // for(auto val : envelope_data){
+    //     if(val>max_val) max_val = val;
+    // }
+
+    // int led_val = 255.0*((double)max_val / 4000.0);
+
+    // std::cout << "Max_val: " << max_val << std::endl;
+    // std::cout << "Led_val: " << led_val << std::endl;
+
+    // on_colour.setRed(led_val%200);
+    // on_colour.setGreen(led_val%200);
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            if (fft_data == true) {
+                Syn->setMatrixPixelColour(j, i, on_colour);
+            } else {
+                Syn->setMatrixPixelColour(j,i,off_colour)
+            }
+        }
+
+        // synaesthetiQ.setMatrixColour(on_colour);
+        synaesthetiQ.render();
     }
-
-    int led_val = 255.0*((double)max_val / 4000.0);
-
-    std::cout << "Max_val: " << max_val << std::endl;
-    std::cout << "Led_val: " << led_val << std::endl;
-
-    colour.setRed(led_val%200);
-    colour.setGreen(led_val%200);
-
-
-    synaesthetiQ.setMatrixColour(colour);
-    synaesthetiQ.render();
-}
