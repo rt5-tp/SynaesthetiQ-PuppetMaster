@@ -15,7 +15,7 @@ Visualiser::Visualiser() : audioCapture(""), synaesthetiQ(), genreClassifier(), 
     
     // data flowing into visualiser, which can be accessed in visualise()
     genreClassifier.register_genre_callback(&Visualiser::genre_prediction_callback);
-    fftProcessor.registerCallback(&Visualiser::fft_callback);
+    fftProcessor.registerLEDCallback(&Visualiser::fft_callback);
     envelopeFollower.registerCallback(&Visualiser::envelope_callback);
     
     // data flowing from audio into genreClassifer, fftProcessor
@@ -76,13 +76,13 @@ void Visualiser::visualise(){
     {
         for (int j = 0; j < width; j++)
         {
-            if (fft_data == true) {
-                Syn->setMatrixPixelColour(j, i, on_colour);
+            if (fft_data[i][j] == true) {
+                synaesthetiQ.setMatrixPixelColour(j, i, on_colour);
             } else {
-                Syn->setMatrixPixelColour(j,i,off_colour)
+                synaesthetiQ.setMatrixPixelColour(j, i, off_colour)
             }
         }
-
-        // synaesthetiQ.setMatrixColour(on_colour);
-        synaesthetiQ.render();
     }
+    // synaesthetiQ.setMatrixColour(on_colour);
+    synaesthetiQ.render();
+}
