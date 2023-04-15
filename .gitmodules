@@ -1,12 +1,12 @@
 [submodule "src/SynaesthetiQ-LED-Library"]
 	path = src/SynaesthetiQ-LED-Library
-	url = git@github.com:rt5-tp/SynaesthetiQ-LED-LIbrary.git
+	url = ../SynaesthetiQ-LED-LIbrary.git
 [submodule "src/SynaesthetiQ-audiocapture"]
 	path = src/SynaesthetiQ-audiocapture
-	url = git@github.com:rt5-tp/SynaesthetiQ-audiocapture.git
+	url = ../SynaesthetiQ-audiocapture.git
 [submodule "documentation"]
 	path = documentation
-	url = git@github.com:rt5-tp/rt5-tp.github.io.git
+	url = ../rt5-tp.github.io.git
 [submodule "src/EnvelopeFollowing"]
 	path = src/EnvelopeFollowing
-	url = git@github.com:rt5-tp/envelope_following.git
+	url = ../envelope_following.git
