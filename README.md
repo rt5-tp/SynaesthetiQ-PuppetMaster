@@ -23,7 +23,7 @@ The overall flow of data through these submodules can be representatd by this di
     <img width="100%" src="https://github.com/rt5-tp/.github/blob/main/Full%20Data%20Flow%20Diagram.svg">
 </div>
 
-More information on how these submodules work and interact with each other can be found in their respective repositories and the [documentation]() for this project.
+More information on how these submodules work and interact with each other can be found in their respective repositories and the [documentation](https://rt5-tp.github.io/) for this project.
 
 ## The Hardest Part
 
