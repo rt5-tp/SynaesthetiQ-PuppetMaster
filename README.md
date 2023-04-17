@@ -1,7 +1,7 @@
 # SynaesthetiQ-PuppetMaster
 This is the top-level repository for the [SynaesthetiQ](https://github.com/rt5-tp) project. SynaesthetiQ is a music visualiser prototype using envelope following, frequency analysis and genre detection to create engaging visualisations of music in real-time. This project was started as part of a Real-time Embedded Programming undergraduate project at the University of Glasgow. 
 
-![Render of the SynaesthetiQ](/assets/images/synaesthetiq-render.png)
+![Render of the SynaesthetiQ](https://github.com/rt5-tp/SynaesthetiQ-PuppetMaster/raw/main/assets/images/synaesthetiq-render.png)
 
 ## One Repo to Rule Them All
 
@@ -17,10 +17,10 @@ The relationships between these submodules are handled by the [Visualiser](https
 
 ## Go with the Flow
 
-The overall flow of data through these submodules can be representatd by this diagram:
+The overall flow of data through these submodules can be representated by this diagram:
 
 <div align="center">
-    <img width="100%" src="https://github.com/rt5-tp/.github/blob/main/Full%20Data%20Flow%20Diagram.svg">
+    <img width="100%" src="https://raw.githubusercontent.com/rt5-tp/.github/main/Full%20Data%20Flow%20Diagram.svg">
 </div>
 
 More information on how these submodules work and interact with each other can be found in their respective repositories and the [documentation](https://rt5-tp.github.io/) for this project.
