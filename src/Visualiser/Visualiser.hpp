@@ -4,6 +4,11 @@
 #include "../SynaesthetiQ-audiocapture/src/FFTProcessor.h"
 #include "../EnvelopeFollowing/src/EnvelopeFollower.hpp"
 
+/**
+ * @class Visualiser
+ * @brief The glue that brings the SynaesthetiQ together - also establishes relationships between submodules
+ */
+
 class Visualiser {
     private:
     AudioCapture audioCapture; 
