@@ -23,6 +23,10 @@ The overall flow of data through these submodules can be representatd by this di
 
 More information on how these submodules work and interact with each other can be found in their respective repositories and the [documentation]() for this project.
 
+## Hardware
+
+A new [hardware](https://github.com/rt5-tp/Synaesthetiq-Hardware-Design) prototype was designed and built to demonstrate the functionality of the SynaesthetiQ software. It centre's around a pair of flexible LED Matrices which have been wrapped around a 3D printed core, placed on top of this core is another larger LED. The big LED is designed to provide a simple envelope following function, where the brightness is proportional to the intensity of sound at that moment, while the matrix should provide a more complex frequency-domain visualisation. This allows for a combination of unique musical visualisation and bright impactful lighting.
+
 ## Installation
 
 ### Install dependencies for Raspberry Pi
