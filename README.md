@@ -45,14 +45,14 @@ As the project developed, a number of additional repositories were created to pr
 Run the "setup.sh" script contained within the root of this repository
 > sudo sh setup.sh
 
-## Team
+## The Dream Team
 
 - [**Ross McKeown**](https://github.com/rossamck) 
 - [**Thomas Nordentoft**](https://github.com/nordwestt) 
 - [**Thomas Burnip**](https://github.com/TBurnip)
 - [**Neil Crawshaw**](https://github.com/Neil-A-C)
 
-## Social Media
+## Like and Subscribe
 
 [**Youtube**](https://www.youtube.com/@synaesthetiq)
 
